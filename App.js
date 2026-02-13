@@ -5,6 +5,7 @@ import {
   Plus, Search, X, Check, Clock, ChevronRight, Briefcase, 
   MapPin, Phone, Mail, Printer, Shield, LayoutGrid, Trash2, LogIn, Lock
 } from 'lucide-react';
+// Changed import to use named exports explicitly without aliases to avoid reference errors
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend, BarChart, Bar, XAxis, YAxis, CartesianGrid } from 'recharts';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
 import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, updateDoc, onSnapshot, query, orderBy, setDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
@@ -43,7 +44,7 @@ const Login = ({ onLogin }) => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        // Simple hardcoded auth for now (can be expanded to Firebase Auth later)
+        // Simple auth for demonstration
         if (username === 'admin' && password === 'law123') {
             onLogin();
         } else {
